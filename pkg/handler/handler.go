@@ -17,15 +17,7 @@ func (h *Handler) InitRouters() *gin.Engine {
 	router := gin.New()
 
 	//router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
-	v1 := router.Group("/v1")
-	{
-		v1.POST("/login", func(c *gin.Context) {
-			c.JSON(200, gin.H{
-				"message": "pong",
-			})
-		})
-		v1.POST("/submit", h.signUp)
-	}
+
 	auth := router.Group("/auth")
 	{
 		auth.POST("/sign-up", h.signUp)

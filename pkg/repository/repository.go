@@ -7,6 +7,7 @@ import (
 
 type Authorization interface {
 	CreateUser(user ApiBooks.User) (int, error)
+	GetUser(username, password string) (ApiBooks.User, error)
 }
 type BooksStorage interface {
 }
